@@ -1,0 +1,29 @@
+<h3>Add Employee</h3>
+<div style="margin-top: 5px">
+    <form [formGroup]="employeeForm">
+
+        <div>
+            <label for="name">Name: </label>
+            <input id="name" type="text" formControlName="name">
+        </div>
+
+        <div>
+            <label for="email">Email: </label>
+            <input id="email" type="email" formControlName="email">
+        </div>
+
+        <div>
+            <label for="date">Joining Date: </label>
+            <input id="date" type="date" formControlName="joiningDate">
+        </div>
+        <div>
+            <label></label>
+            <button type="submit" (click)="addNewEmployees()" [disabled]="employeeForm.value.id"> Add</button>
+            <label></label>
+            <button type="submit" (click)="updateEmployee()" [disabled]="!employeeForm.value.id"> Update</button>
+            <label></label>
+            <button type="submit" (click)="back()" [disabled]="!employeeForm.value.id"> Back </button>
+        </div>
+    </form>
+
+</div>

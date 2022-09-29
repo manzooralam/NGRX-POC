@@ -1,0 +1,20 @@
+<h3>Employee List</h3>
+
+<table style="margin-top: 5px">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Joining Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let emp of employees$ | async">
+        <td> {{emp.name}} </td>
+        <td> {{ emp.email }} </td>
+        <td> {{ (getSecond(emp.joiningDate))|date }} </td>
+        <td (click)="selectEmployeeEdit(emp)"> <button>Edit</button>
+        </td>
+        <td (click)="selectEmployeeDelete(emp.id)"> <button>Delete</button> </td>
+
+    </tr>
+</table>
